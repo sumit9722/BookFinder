@@ -1,0 +1,29 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+  --darkmodetextcolor : rgb(230,230,230);
+  --darkmodetextfilter : invert(100%) sepia(3%) saturate(2061%) hue-rotate(178deg) brightness(115%) contrast(80%);
+  --themecolor : rgb(6, 193, 218);
+  --darkbgcolor : #242424;
+  --darkitembgcolor : #313131;
+  --buttontext : white;
+  --filtervalue : invert(1);
+  --navdarkcolor : rgb(15, 15, 15);
+  --themecolorfiltervalue : invert(42%) sepia(91%) saturate(2463%) hue-rotate(166deg) brightness(101%) contrast(101%);
+}
+body{
+  margin: 0;
+  padding: 0;
+}

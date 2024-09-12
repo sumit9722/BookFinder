@@ -1,0 +1,20 @@
+.book{
+    width: 180px;
+    height: 320px;
+    background-color: var(--darkitembgcolor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.bookcoverimg{
+    height: 240px;
+    width: 135px;
+}
+
+.booktitle{
+    font-size: 30px;
+    font-weight: 500;
+}

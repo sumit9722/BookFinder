@@ -1,0 +1,86 @@
+.modalsection{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: calc(100%-20px);
+    background-color: var(--darkitembgcolor);
+    height: 120px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 15fr 9fr;
+    grid-row: auto;
+    min-height: fit-content;
+    align-items: center;
+    padding-left: 20px;
+    border-radius: 60px;
+    justify-content: space-between;
+}
+
+.modalbookcoverdiv{
+    grid-column: 2/3;
+    min-height: fit-content;
+    justify-self: center;
+    
+}
+
+.modalbookcover{
+    width: 80px;
+    max-height: 110px;
+}
+
+.modalbookdetails{
+    grid-column: 3/4;
+    align-self: start;
+}
+
+.modalbooklisttitle{
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.modalbooklistseriesname{
+    margin-bottom: 10px;
+}
+
+.yourbookentry{
+    grid-column: 4/5;
+}
+
+.addonmylistbutton{
+    height: 40px;
+    background-color: var(--darkbgcolor);
+    border: none;
+    border-radius: 80px;
+    border-left: 5px var(--themecolor) solid;
+    border-right: 5px var(--themecolor) solid;
+    font-size: 1.25rem;
+    width: 80px;
+    color: var(--darkmodetextcolor);
+}
+
+.addonmylistbutton:active{
+    border: none;
+    transition: border 0.1s linear;
+    border: 2px var(--themecolor) solid;
+}
+
+.statusofbook{
+    height: 40px;
+    width: 200px;
+    font-size: 1.1rem;
+    color: var(--darkmodetextcolor);
+    border-radius: 50px;
+    border:none;
+    border-left: 5px var(--themecolor) solid;
+    border-right: 5px var(--themecolor) solid;
+    outline: 0px;
+    background-color:var(--darkbgcolor);
+    transition: all 0.1s linear;
+    padding-inline: 20px;
+}
+
+.booktype option{
+    color: var(--darkmodetextcolor);
+}
+
+
+

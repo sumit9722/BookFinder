@@ -1,0 +1,122 @@
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 70px;
+    background-color: var(--navdarkcolor);
+    z-index: 100;
+    margin: 0px;
+}
+
+.logonav{
+    height: 40px;
+    width: 40px;
+}
+
+.navbarlist{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    padding-inline-start: 0px;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+input[type="text" i] {
+    padding-block: 0px;
+    padding-inline: 50px;
+}
+
+
+.addbookbutton{
+    height: 50px;
+    width: 50px;
+}
+
+
+.searchdiv{
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.searchbar{
+    height: 50px;
+    width: 30vw;
+    font-size: 1.25rem;
+    color: var(--darkmodetextcolor);
+    border-radius: 50px;
+    border:none;
+    outline: 0px;
+    background-color:var(--darkbgcolor);
+}
+
+
+.aftersearchdiv{
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    left: -5px;
+    width: calc(30vw + 102px);
+    height: 50px;
+    background-color: var(--darkbgcolor);
+    border-radius: 80px;
+    border-left: 5px var(--themecolor) solid;
+    border-right: 5px var(--themecolor) solid;
+    transition: border 0.2s linear;
+    z-index: -10;
+}
+.searchbar:focus-visible ~ .aftersearchdiv{
+    border: none;
+    transition: border 0.1s linear;
+    border: 2px var(--themecolor) solid;
+    margin-top: -27px;
+    left:-2px;
+}
+
+.searchsubmitbutton{
+    border-radius: 30px;
+    background-color:var(--darkbgcolor);
+    height: 50px;
+    width: 50px;
+    border:none;
+    /* transition: all 0.1s; */
+}
+
+
+
+
+.searchbuttonimg{
+    width: 40px;
+    height: 40px;
+    filter: var(--darkmodetextfilter);
+}
+
+.searchsubmitbutton:active > .searchbuttonimg{
+    filter: var(--themecolorfiltervalue);
+}
+
+.addbookbutton{
+    height: 50px;
+    background-color: var(--darkbgcolor);
+    border: none;
+    border-radius: 80px;
+    border-left: 5px var(--themecolor) solid;
+    border-right: 5px var(--themecolor) solid;
+    font-size: 1.25rem;
+    width: 150px;
+    color: var(--darkmodetextcolor);
+}
+
+.addbookbutton:active{
+    border: none;
+    transition: border 0.1s linear;
+    border: 2px var(--themecolor) solid;
+}
