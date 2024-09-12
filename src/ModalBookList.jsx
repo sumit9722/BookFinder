@@ -1,5 +1,4 @@
 import "./ModalBooklist.css" 
-import MyBook from "./MyBook"
 import { useContext } from "react"
 import { MyBookListContext } from "./MyBookListContext"
 
@@ -9,7 +8,7 @@ export default function ModalBookList(param){
         e.preventDefault()
         let url = document.getElementById("urlinvi").value;
         let title = document.getElementById("titleinvi").value;
-        myBook.setMyBookList(<MyBook imgurl = {url} title = {title}/>)
+        myBook.setMyBookList(b => [...b, {url: param.result.published_works[0].cover_art_url, title : param.result.title}]);
     }
     return(
         <div className="modalsection" id={"apifetch" + param.id}>

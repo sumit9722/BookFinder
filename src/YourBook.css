@@ -35,3 +35,10 @@
     font-size: 20px;
 }
 
+.books{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+}
+

@@ -33,5 +33,21 @@ export default async function fetchingData(bookParametersObject) {
             errorCode : error
         };
     }
-}
 
+    // const url = 'https://book-finder1.p.rapidapi.com/api/search?series=Wings%20of%20fire&book_type=Fiction&lexile_min=600&lexile_max=800&results_per_page=25&page=1';
+    // const options = {
+    //     method: 'GET',
+    //     headers: {
+    //         'x-rapidapi-key': '998d74b152msh2918a57284edac0p14b823jsne20ebe1c7d0c',
+    //         'x-rapidapi-host': 'book-finder1.p.rapidapi.com'
+    //     }
+    // };
+
+    // try {
+    //     const response = await fetch(url, options);
+    //     const result = await response.text();
+    //     console.log(result);
+    // } catch (error) {
+    //     console.error(error);
+    // }
+}
