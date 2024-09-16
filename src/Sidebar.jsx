@@ -2,10 +2,13 @@ import "./Sidebar.css"
 import { useContext, useEffect, useState} from "react"
 import { MyBookListContext } from "./MyBookListContext"
 import { FilterContext } from "./FilterContext"
+import { SidebarTranslateContext } from "./SidebarTranslateContext"
 
 export default function Sidebar(){
     const books = useContext(MyBookListContext);
     const filterset = useContext(FilterContext);
+    const sidebarClass = useContext(SidebarTranslateContext);
+
     const [details, setDetails] = useState({
         total : 0,
         currReading : 0,
@@ -131,7 +134,7 @@ export default function Sidebar(){
     },[books.myBookList])
 
     return(
-        <div className="sidebar">
+        <div className={"sidebar " + sidebarClass.sidebarTranslateClass}>
             <div className="yourinfo">
                 <div className="yif totalbooks">Total: <div className="nums">&nbsp;{details.total}</div></div>
                 <div className="yif reading">Currently reading : <div className="nums">&nbsp;{details.currReading}</div></div>
@@ -143,6 +146,7 @@ export default function Sidebar(){
                 <div className="favdiv">
                     <label htmlFor="favs" className="favlabel">Favorites : </label>
                     <input type="checkbox" name="favs" id="favs" className="favs" onChange={updateFilterparam}/>
+                    <button className="filter" onClick={updatefilter}>Filter</button>
                 </div>
                 <div className="categories">
                     <div className="headlist">Categories:</div>
@@ -156,7 +160,6 @@ export default function Sidebar(){
                         {details.losubcatelog}
                     </div>
                 </div>
-                <button className="filter" onClick={updatefilter}>Filter</button>
             </div>
         </div>
     )

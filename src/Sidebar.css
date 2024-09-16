@@ -40,13 +40,19 @@
     padding-left: 10px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
+    width: 100%;
 }
 
 .favs{
     width: 20px;
     height: 20px;
     padding-top: 3px;
+}
+
+.favbox{
+    display: flex;
 }
 
 .headlist{
@@ -116,10 +122,47 @@
     margin: 20px;
     margin-top: 10px;
     transition: border 0.1s linear;
+    position: relative;
+    top: 5px;
 }
 
 .filter:active{
     border: none;
     transition: border 0.1s linear;
     border: 2px var(--themecolor) solid;
+}
+
+@media (max-width: 800px){
+    .sidebar{
+        position: absolute;
+        translate: -200% 0%;
+        transition: translate 0.25s;
+        z-index: 10;
+    }
+    
+    .sidebarvisible{
+        translate: 0% 0%;
+        z-index: 10;
+    }
+
+    .sidebarvisible::before{
+        content: "";
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -5;
+        background-color: rgba(15, 15, 15,0.5);
+    }
+}
+
+@media (max-width: 400px){
+    .sidebar{
+        width: 100vw;
+    }
+    .sidebarvisible::before{
+        display: none;
+    }
 }

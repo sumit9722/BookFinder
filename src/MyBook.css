@@ -7,6 +7,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     transition: width 0.25s;
+    align-self: start;
 }
 
 .bookcover{
@@ -18,7 +19,7 @@
     position: relative;
 }
 
-.favbox{
+.favcircle{
     position: absolute;
     top: 1%;
     right: 1%;
@@ -71,8 +72,12 @@
     font-size: 18px;
 }
 
-.book:hover {
-    width: 411px;
+/* .book:hover {
+    width: 416px;
+} */
+
+.bookwidth{
+    width: 416px;
 }
 
 .booktitle{
@@ -162,4 +167,91 @@
 .deletebooks:hover .deleteimg{
     filter : invert(22%) sepia(82%) saturate(7102%) hue-rotate(358deg) brightness(95%) contrast(119%);
 }
+
+@media (max-width: 420px) {
+    .book{
+        width: 135px;
+        height: 240px;
+        border-radius: 10px;
+    }
+    
+    .bookcover{
+        width: 135px;
+        height: 240px;
+    }
+    
+    .favcircle{
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+    }
+    
+    .activefavstar{
+        width: 40px;
+        height: 40px;
+    }
+    
+    .favstar{
+        width: 40px;
+        height: 40px;
+    }
+    
+    .bookcoverimg{
+        width: 135px;
+        height: 240px;
+        border-radius: 10px;
+    }
+    
+    .bookdetailsdiv{   
+        width: 135px;
+        height: 240px;
+        font-size: 18px;
+    }
+    
+    /* .book:hover {
+        width: 285px;
+    } */
+    .bookwidth{
+        width: 285px;
+    }
+    
+    .booktitle{
+        margin-top: -15px;
+        font-size: 23px;
+        font-weight: 500;
+    }
+    
+    .bookseries{
+        min-height: 17px;
+        font-size: 14px;
+    }
+    
+    .bookauthor{
+        padding-top: 8px;
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+    
+    .booksummary{
+        margin-top: 5px;
+        font-size: 13px;
+        height: 90px;
+    }
+    
+    .bookinput{
+        padding-top: 8px;
+        padding-right: 14px;
+    }
+    
+    .status{
+        height: 30px;
+        width: 90px;
+    }
+    
+    .deletebooks{
+        height: 30px;
+        width: 30px;
+    }
+}
+
 

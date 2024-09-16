@@ -113,10 +113,98 @@ input[type="text" i] {
     font-size: 1.25rem;
     width: 150px;
     color: var(--darkmodetextcolor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .addbookbutton:active{
     border: none;
     transition: border 0.1s linear;
     border: 2px var(--themecolor) solid;
+}
+
+.plusbtn{
+    display: none;
+    width: 30px;
+    height: 30px;
+}
+
+.searchbefore{
+    display: none;
+}
+
+.btns{
+    display: flex;
+    gap: 10px;
+}
+
+.searcher{
+    display: none;
+}
+
+.tabselect{
+    display: none;
+}
+
+@media (max-width : 800px)
+{
+    .navdesaturate{
+        filter: none;
+        -webkit-filter: grayscale(100%);
+        -moz-filter:    grayscale(100%);
+        -ms-filter:     grayscale(100%);
+        -o-filter:      grayscale(100%);
+        cursor: pointer;
+    }
+}
+
+@media (max-width : 600px)
+{
+
+    .navbarlist{
+        position: relative;
+    }
+    .navbarsearchbar{
+        display: none;
+        position: absolute;
+        top: 10px;
+        left: 0%;
+    }
+
+    .searchbefore{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .searcher{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .searchbar{
+        width: calc(100vw - 100px);
+    }
+    
+
+    .aftersearchdiv{
+        width: 100vw;
+        border-radius: 0px;
+    }
+
+    
+    .plusbtn{
+        display: flex;
+    }
+    .btntext{
+        display: none;
+    }
+    .addbookbutton{
+        width: 50px;
+        height: 50px;
+        border: none;
+    }
+
+    
 }

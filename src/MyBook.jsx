@@ -4,10 +4,21 @@ import { MyBookListContext } from './MyBookListContext'
 
 export default function MyBook(params){
     const myBook = useContext(MyBookListContext);
+    const [widthincre, setWidthincre] = useState("")
     function deletebook(){
         myBook.setMyBookList(b => {
             return b.filter((ele) =>  ele.isbn !== params.isbn)
         });
+    }
+
+    function widthincrement(){
+        if(widthincre == "")
+        {
+            setWidthincre("bookwidth");
+        }
+        else{
+            setWidthincre("");
+        }
     }
 
     function statuschange(e){
@@ -99,10 +110,9 @@ export default function MyBook(params){
     )
 
     return(
-        <div className="book">
+        <div className={"book " + widthincre}>
             <div className="bookcover">
-                <img src={params.imgurl} alt="" className="bookcoverimg"/>
-                <div className="favbox" onClick={favchange}>
+                <img src={params.imgurl} alt="" className="bookcoverimg" onClick={widthincrement}/>                <div className="favcircle" onClick={favchange}>
                     <img src="./star.svg" alt="fav" className="favstar"/>
                     {params.fav &&
                     <img src="./redstar.svg" alt="fav" className="activefavstar" id={"ac"+params.isbn}/>

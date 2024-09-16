@@ -7,24 +7,27 @@ import { ModalDisplayProvider } from './ModalDisplayContext'
 import { MyBookListProvider } from './MyBookListContext'
 import { SearchContextProvider } from './searchcontext'
 import { FilterContextProvider } from './FilterContext'
+import { SidebarTranslateProvider } from './SidebarTranslateContext'
 
 export default function App() {
   return (
     <>
-      <FilterContextProvider>
-        <SearchContextProvider>
-          <MyBookListProvider>
-            <ModalDisplayProvider>
-              <NavBar />
-              <Modal />
-              <div className='mainbody'>
-                <Sidebar />
-                <YourBook />
-              </div>
-            </ModalDisplayProvider>
-          </MyBookListProvider>
-        </SearchContextProvider>
-      </FilterContextProvider>
+      <SidebarTranslateProvider>
+        <FilterContextProvider>
+          <SearchContextProvider>
+            <MyBookListProvider>
+              <ModalDisplayProvider>
+                <NavBar />
+                <Modal />
+                <div className='mainbody'>
+                  <Sidebar />
+                  <YourBook />
+                </div>
+              </ModalDisplayProvider>
+            </MyBookListProvider>
+          </SearchContextProvider>
+        </FilterContextProvider>
+      </SidebarTranslateProvider>
     </>
   )
 }

@@ -287,11 +287,62 @@ li{
 
 }
 
-@media (max-width:  800px){
+@media (max-width:  900px){
     .modal{
         height: 100vh;
         width: 100vw;
     }
 
+    .exitmodal{
+        position: absolute;
+        top: 5px;
+        right: 12px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .exitmodalcross{
+        width: 25px;
+        height: 25px;
+    }
+
+}
+
+@media (max-width: 600px){
+    .modalsearch{
+        height: 240px;
+    }
+    .firsttwoinputs{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .remaininginputs{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .apititlesearchbar{
+        width: 85%;
+        margin: auto;
+    }
+    .apiauthorsearchbar{
+        width: 85%;
+        margin: auto;
+    }
+    .apiseriessearchbar{
+        width: 38%;
+        margin: auto;
+    }
+    .booktype{
+        width: 38%;
+        margin: auto;
+    }
+    .exitmodal{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
 }
 

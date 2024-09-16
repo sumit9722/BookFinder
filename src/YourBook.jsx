@@ -64,7 +64,7 @@ export default function YourBook(){
         }
         else
         {
-            b = "You Have Added No Such BOOK"
+            b = <div className="deftext">No Book in Your Collection Match the Criteria</div>
         }
 
         console.log(b);
@@ -85,7 +85,7 @@ export default function YourBook(){
            fbooklist = booklist(myBook.myBookList);
         }
         else{
-            fbooklist = "'Click on the 'Add a Book' on the Navbar To Add a Book'";
+            fbooklist = <div className="deftext">Click on the 'Add a Book' on the Navbar To Add a Book</div>;
         }
         setBooks(fbooklist);
     },[myBook.myBookList, tab, searchterm.search, filterset.filter])
@@ -129,6 +129,15 @@ export default function YourBook(){
                 </div>
                 <div className='tabline'></div>
             </div>
+            <select className="statusofbook tabselect" onChange={(e)=>{
+                    const {name, value} = e.target;
+                    setTab(parseInt(value));
+                    }}>
+                    <option value={0}>All</option>
+                    <option value={1}>Reading</option>
+                    <option value={2}>Finish Reading</option>
+                    <option value={3}>Plan To Read</option>
+                </select>
             <div className="yourbooks"><div className='books'>{books}</div></div>
         </div>
     )

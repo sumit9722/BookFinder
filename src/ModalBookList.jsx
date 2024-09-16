@@ -52,7 +52,7 @@ export default function ModalBookList(param){
                 <div className="modalbooklistauthor">Author : {param.result.authors[0]}</div>
             </div>
             <div className="yourbookentry">
-                <form action="" onSubmit={addtoyourbook}>
+                <form action="" onSubmit={addtoyourbook} className="modalbooklistform">
                     <select name="statusofbook" id="statusofbook" className="statusofbook" onChange={(e)=>{
                         const {name, value} = e.target;
                         setStatus(value);

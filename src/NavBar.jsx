@@ -2,13 +2,29 @@ import { useState } from "react";
 import { useContext } from "react";
 import { ModalDisplayContext } from "./ModalDisplayContext"
 import { SearchContext } from "./searchcontext";
+import { SidebarTranslateContext } from "./SidebarTranslateContext";
 import "./NavBar.css"
 
 export default function NavBar() {
     const [searchButtonClass, setSearchButtonClass] = useState("");
     const modalClass = useContext(ModalDisplayContext);
     const searchcon = useContext(SearchContext);
+    const sidebar = useContext(SidebarTranslateContext);
     const [searchTerm, setSearchTerm] = useState("");
+    const [satutration, setSaturation] = useState ("")
+
+    function sidebarchange(){
+        if(sidebar.sidebarTranslateClass == "")
+        {
+            sidebar.setSidebarTranslateClass("sidebarvisible")
+            setSaturation("navdesaturate");
+        }
+        else
+        {
+            sidebar.setSidebarTranslateClass("")
+            setSaturation("")
+        }
+    }
 
     function searchbtnclicked() {
         setSearchButtonClass("searchsubmitbuttonclicked");
@@ -20,7 +36,17 @@ export default function NavBar() {
 
     function searchlist(e) {
         e.preventDefault();
+        if(window.innerWidth <  600)
+        {
+            document.querySelector(".navbarsearchbar").style.display="none";
+        }
         searchcon.setSearch(searchTerm);
+    }
+
+    function searcherClicked()
+    {
+        document.querySelector(".navbarsearchbar").style.display="block";
+        document.querySelector(".searchbar").focus();
     }
 
     function updateSearchTerm(e){
@@ -29,12 +55,13 @@ export default function NavBar() {
     }
 
     return (
-        <nav className="navbar">
+        <nav className="navbar" >
             <ul className="navbarlist">
-                <li>
-                    <img src="/book.svg" alt="My Book List Logo" className="logonav" />
+                <li onClick={sidebarchange}>
+                    <img src="/book.svg" alt="My Book List Logo" className={"logonav " + satutration} />
                 </li>
                 <li className="navbarsearchbar">
+                    <div className="searchbefore"></div>
                     <form className="navsearchform" onSubmit={searchlist}>
                         <div className="searchdiv">
                             <input type="text" name="search" id="searchbar" className="searchbar" placeholder="Search Your Books" onChange={updateSearchTerm}/>
@@ -43,8 +70,9 @@ export default function NavBar() {
                         </div>
                     </form>
                 </li>
-                <li>
-                    <button className="addbookbutton" onClick={addbuttonclicked}>Add a Book</button>
+                <li className="btns">
+                    <button type="submit" className="searchsubmitbutton searcher" onClick={searcherClicked}><img src="./searchicon.svg" alt="search" className="searchbuttonimg" /></button>
+                    <button className="addbookbutton" onClick={addbuttonclicked}><div className="btntext">Add a Book</div><img src="./plus.svg" alt="plus" className="searchbuttonimg plusbtn"/></button>
                 </li>
             </ul>
 
