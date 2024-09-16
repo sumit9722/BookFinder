@@ -1,15 +1,14 @@
 import { useState } from "react";
 import { useContext } from "react";
 import { ModalDisplayContext } from "./ModalDisplayContext"
+import { SearchContext } from "./searchcontext";
 import "./NavBar.css"
-
-function searchlist(e) {
-    e.preventDefault();}
 
 export default function NavBar() {
     const [searchButtonClass, setSearchButtonClass] = useState("");
     const modalClass = useContext(ModalDisplayContext);
-
+    const searchcon = useContext(SearchContext);
+    const [searchTerm, setSearchTerm] = useState("");
 
     function searchbtnclicked() {
         setSearchButtonClass("searchsubmitbuttonclicked");
@@ -17,6 +16,16 @@ export default function NavBar() {
 
     function addbuttonclicked() {
         modalClass.setModalDisplayClass("");
+    }
+
+    function searchlist(e) {
+        e.preventDefault();
+        searchcon.setSearch(searchTerm);
+    }
+
+    function updateSearchTerm(e){
+        const {name, value} = e.target;
+        setSearchTerm(value);
     }
 
     return (
@@ -28,8 +37,8 @@ export default function NavBar() {
                 <li className="navbarsearchbar">
                     <form className="navsearchform" onSubmit={searchlist}>
                         <div className="searchdiv">
-                            <input type="text" name="search" id="searchbar" className="searchbar" placeholder="Search Your Books"/>
-                            <button type="submit" className={"searchsubmitbutton "+searchButtonClass} onClick={()=>{searchbtnclicked()}}><img src="./searchicon.svg" alt="search" className="searchbuttonimg" /></button>
+                            <input type="text" name="search" id="searchbar" className="searchbar" placeholder="Search Your Books" onChange={updateSearchTerm}/>
+                            <button type="submit" className={"searchsubmitbutton "+searchButtonClass} onClick={searchbtnclicked}><img src="./searchicon.svg" alt="search" className="searchbuttonimg" /></button>
                             <div className="aftersearchdiv"></div>
                         </div>
                     </form>

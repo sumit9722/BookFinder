@@ -231,6 +231,55 @@ li{
     position: absolute;
 }
 
+@keyframes scaleanimation {
+    0%{
+        scale: 0.5;
+    }
+    50%{
+        scale: 1;
+    }
+    100%{
+        scale:0.5;
+    }
+}
+
+.loaderasset{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: white;
+    animation: scaleanimation 1s infinite linear;
+}
+
+.loaderasset2{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    scale:0.5;
+    background-color: white;
+    animation: scaleanimation 1s infinite linear 0.25s;
+}
+
+.loaderasset3{
+    width: 30px;
+    height: 30px;
+    scale:0.5;
+    border-radius: 50px;
+    background-color: white;
+    animation: scaleanimation 1s infinite linear 0.5s;
+}
+
+.loader{
+    
+    display: flex;
+    gap: 10px;
+    flex:1;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    height: 50vh;
+}
+
 @media (max-width:  1300px){
     .modal{
         width: 80%;
@@ -245,3 +294,4 @@ li{
     }
 
 }
+

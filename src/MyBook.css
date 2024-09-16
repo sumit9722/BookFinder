@@ -1,26 +1,165 @@
 .book{
-    width: 180px;
+    width: 198px;
     height: 320px;
     background-color: var(--darkitembgcolor);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    border-radius: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    transition: width 0.25s;
+}
+
+.bookcover{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    z-index: 10;
+    height: 320px;
+    width: 198px;
+    position: relative;
+}
+
+.favbox{
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    width: 50px;
+    height: 50px;
+    border-radius: 40px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
     justify-content: center;
-    border-radius: 20px;
+    align-items: center;
+    background-color: var(--darkbgcolor);
+    padding-top: 1px;
+}
+
+.activefavstar{
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    transition: 0.15s ease-in;
+}
+
+.favstar{
+    width: 50px;
+    height: 50px;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    filter: var(--filtervalue);
+    transition: 0.1s;
+}
+
+.favbox:hover .favstar{
+    filter : invert(22%) sepia(82%) saturate(7102%) hue-rotate(358deg) brightness(95%) contrast(119%);
 }
 
 .bookcoverimg{
-    height: 240px;
-    width: 135px;
+    height: 320px;
+    width: 198px;
+    border-radius: 10px;
+}
+
+.bookdetailsdiv{  
+    justify-self: flex-end;  
+    height: 320px;
+    width: 198px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    font-size: 18px;
+}
+
+.book:hover {
+    width: 411px;
 }
 
 .booktitle{
+    padding-top: 20px;
+    width: 90%;
     font-size: 30px;
     font-weight: 500;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
     -webkit-box-orient: vertical;
-    text-align: center;
 }
+
+.bookseries{
+    padding-top: 5px;
+    width: 90%;
+    min-height: 17px;
+    font-size: 15px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.bookauthor{
+    padding-top: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.booksummary{
+    margin-top: 5px;
+    font-size: 15px;
+    overflow-y: scroll;
+    height: 135px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-right: 15px;
+    text-align: justify;
+}
+
+.bookinput{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+}
+
+.status{
+    height: 30px;
+    width: 140px;
+    font-size: 1rem;
+    color: var(--darkmodetextcolor);
+    border-radius: 50px;
+    border:none;
+    border-left: 5px var(--themecolor) solid;
+    border-right: 5px var(--themecolor) solid;
+    outline: 0px;
+    background-color:var(--darkbgcolor);
+    transition: all 0.1s linear;
+    padding-inline-start: 5px;
+}
+
+.deletebooks{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background-color: var(--darkbgcolor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deleteimg{
+    filter: var(--filtervalue);
+}
+
+.deletebooks:hover .deleteimg{
+    filter : invert(22%) sepia(82%) saturate(7102%) hue-rotate(358deg) brightness(95%) contrast(119%);
+}
+

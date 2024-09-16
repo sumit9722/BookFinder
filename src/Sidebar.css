@@ -1,0 +1,125 @@
+.sidebar{
+    padding-top: 80px;
+    margin: 0;
+    height: calc(100vh - 80px);
+    background-color: var(--navdarkcolor);
+    width: 300px;
+}
+
+.yourinfo{
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.yif{
+    display: flex;
+}
+
+.nums{
+    font-weight: 400;
+    color: var(--themecolor);
+}
+
+
+
+.filteroption{
+    padding-top: 3vh;
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.favdiv{
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.favs{
+    width: 20px;
+    height: 20px;
+    padding-top: 3px;
+}
+
+.headlist{
+    padding-left: 10px;
+}
+
+.listofcategories, .listofsubcategories{
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 90%;
+    font-size: 15px;
+    min-height: 20px;
+    max-height: 25vh;
+    border-radius: 18px;
+    background-color: var(--darkbgcolor);
+    align-self: center;
+    padding: 15px;
+    padding-right: 5px;
+    margin-left: 5px;
+    margin: auto;
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.listofcategories::-webkit-scrollbar {
+    display: none;
+}
+
+.listofsubcategories::-webkit-scrollbar {
+    display: none;
+}
+
+.subcatitems, .catitems{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: var(--navdarkcolor);
+    height: 17px;
+    padding: 8px;
+    transition: 0.1s;
+    min-height: fit-content;
+}
+
+.subcatitems:hover, .catitems:hover{
+    border: 2px var(--themecolor) solid;
+}
+
+.bgcolorclass{
+    background-color: var(--themecolor);
+}
+
+.filter{
+    height: 40px;
+    background-color: var(--darkbgcolor);
+    border: none;
+    border-radius: 80px;
+    border-left: 5px var(--themecolor) solid;
+    border-right: 5px var(--themecolor) solid;
+    font-size: 1.25rem;
+    width: 80px;
+    color: var(--darkmodetextcolor);
+    align-self: flex-end;
+    margin: 20px;
+    margin-top: 10px;
+    transition: border 0.1s linear;
+}
+
+.filter:active{
+    border: none;
+    transition: border 0.1s linear;
+    border: 2px var(--themecolor) solid;
+}

@@ -9,6 +9,8 @@ import ModalBookList from "./ModalBookList"
 export default function Modal() {
     const modalClass = useContext(ModalDisplayContext);
 
+    const [loading, setloading] = useState(false);
+
     function exitModal(){
         modalClass.setModalDisplayClass("modalscreen-invis");
     }
@@ -19,6 +21,14 @@ export default function Modal() {
         series : "",
         bookType : ""
     })
+
+    function reset(){
+        setdetails({title : "",
+            author : "",
+            series : "",
+            bookType : ""
+        })
+    }
 
     const [apiResults, setApiResults] = useState(<div className="defaultmsg">Search For the books you want.....</div>)
 
@@ -36,23 +46,36 @@ export default function Modal() {
     }
     
     async function searchapi(e){
+        setloading(true);
         e.preventDefault();
         const bookParametersObject = {
-            author : details.author == "" ? null : details.author,
-            title : details.title == "" ? null : details.title,
-            series : details.series == "" ? null : details.series,
-            book_type : details.bookType == "" ? null : details.bookType,
+            author : details.author,
+            title : details.title,
+            series : details.series,
+            book_type : details.bookType,
             results_per_page: '100',
             page: '1'
         };
-        console.log(bookParametersObject);
         let result = await fetchingData(bookParametersObject);
         if(result.isFetchingsuccessfull){
             console.log(result.bookArray)
             setApiResults(modalbooklistmaker(result.bookArray));
+            if(result.bookArray.length == 0)
+            {
+                setApiResults(<div className="defaultmsg">No Books Found</div>);
+            }
+            setloading(false);
         }
         else{
-            setApiResults("Error in Server Connection");
+            if(result.errorCode == 422)
+            {
+                setApiResults(<div className="defaultmsg">Please Type More than one letter</div>);
+                setloading(false);
+                return;
+            }
+            setApiResults(<div className="defaultmsg">Error in API Connection</div>);
+            setloading(false);
+            console.log("ERROR_CODE :", result.errorCode)
         }
     }
 
@@ -68,19 +91,19 @@ export default function Modal() {
                         </div>
                         <div className="remaininginputs">
                             <input type="text" className="apiseriessearchbar" name="series" placeholder="Series Search" onChange={updateparams}/>
-                            <select name="booktype" id="booktype" className="booktype" onChange={updateparams}>
-                                <option defaultValue value="" >Select book type</option>
+                            <select name="bookType" id="booktype" className="booktype" defaultValue="" onChange={updateparams}>
+                                <option value="">Select book type</option>
                                 <option value="Fiction">Fiction</option>
                                 <option value="Nonfiction">Non-fiction</option>
                             </select>
-                            <button type="reset" className="apiformbutton resettype"><img src="./cross.svg" alt="search" className="apiformbuttonimg" /></button>
+                            <button type="reset" onClick={reset} className="apiformbutton resettype"><img src="./cross.svg" alt="search" className="apiformbuttonimg" /></button>
                             <button type="submit" className="apiformbutton submittype" onClick={searchapi}><img src="./searchicon.svg" alt="search" className="apiformbuttonimg" /></button>
 
                         </div>
                     </form>
                 </div>
                 <div className="modalresult">
-                    {apiResults}
+                    {loading? <div className="loader"><div className="loaderasset"></div><div className="loaderasset2"></div><div className="loaderasset3"></div></div>:apiResults}
                 </div>
             </div>
         </div>
