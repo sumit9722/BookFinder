@@ -5,7 +5,7 @@ import Sidebar from './Sidebar'
 import "./App.css"
 import { ModalDisplayProvider } from './ModalDisplayContext'
 import { MyBookListProvider } from './MyBookListContext'
-import { SearchContextProvider } from './searchcontext'
+import { SearchContextProvider } from './SearchContext'
 import { FilterContextProvider } from './FilterContext'
 import { SidebarTranslateProvider } from './SidebarTranslateContext'
 
