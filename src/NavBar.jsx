@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useContext } from "react";
 import { ModalDisplayContext } from "./ModalDisplayContext"
-import { SearchContext } from "./searchcontext";
+import { SearchContext } from "./SearchContext";
 import { SidebarTranslateContext } from "./SidebarTranslateContext";
 import "./NavBar.css"
 
