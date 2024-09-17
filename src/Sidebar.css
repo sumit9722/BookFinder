@@ -161,8 +161,16 @@
 @media (max-width: 400px){
     .sidebar{
         width: 100vw;
+        height: 100vh;
     }
     .sidebarvisible::before{
         display: none;
     }
+    .favdiv{
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    /* .favlabel{
+        font-size: 16px;
+    } */
 }

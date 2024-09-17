@@ -144,7 +144,7 @@ export default function Sidebar(){
             </div>
             <div className="filteroption">
                 <div className="favdiv">
-                    <label htmlFor="favs" className="favlabel">Favorites : </label>
+                    <label htmlFor="favs" className="favlabel">Favorites: </label>
                     <input type="checkbox" name="favs" id="favs" className="favs" onChange={updateFilterparam}/>
                     <button className="filter" onClick={updatefilter}>Filter</button>
                 </div>

@@ -311,6 +311,7 @@ li{
 @media (max-width: 600px){
     .modalsearch{
         height: 240px;
+        overflow: hidden;
     }
     .firsttwoinputs{
         flex-direction: column;
