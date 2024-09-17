@@ -2,7 +2,7 @@ import './YourBook.css'
 import MyBook from "./MyBook"
 import { useState, useContext, useEffect} from 'react'
 import { MyBookListContext } from './MyBookListContext'
-import { SearchContext } from './searchcontext'
+import { SearchContext } from './SearchContext'
 import { FilterContext } from './FilterContext'
 
 export default function YourBook(){
