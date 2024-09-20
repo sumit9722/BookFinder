@@ -88,4 +88,14 @@
     .yourbooktabsdiv{
         display: none;
     }
+
+    .topheads{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .tabselect{
+        margin-top: 10px;
+        margin-right: 10px;
+    }
 }

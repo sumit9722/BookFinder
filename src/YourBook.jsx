@@ -119,25 +119,27 @@ export default function YourBook(){
 
     return (
         <div className="yourbookbody">
-            <h1 className="headingwebsite">My Book</h1>
-            <div className="yourbooktabsdiv">
-                <div className="yourbooktabs">
-                    <div className="yourbooktab tab1" onClick={tabchange}>ALL</div>
-                    <div className="yourbooktab tab2" onClick={tabchange}>Reading</div>
-                    <div className="yourbooktab tab3" onClick={tabchange}>Finished Reading</div>
-                    <div className="yourbooktab tab4" onClick={tabchange}>Plan to Read</div>
+            <div className="topheads"> 
+                <h1 className="headingwebsite">My Book</h1>
+                <div className="yourbooktabsdiv">
+                    <div className="yourbooktabs">
+                        <div className="yourbooktab tab1" onClick={tabchange}>ALL</div>
+                        <div className="yourbooktab tab2" onClick={tabchange}>Reading</div>
+                        <div className="yourbooktab tab3" onClick={tabchange}>Finished Reading</div>
+                        <div className="yourbooktab tab4" onClick={tabchange}>Plan to Read</div>
+                    </div>
+                    <div className='tabline'></div>
                 </div>
-                <div className='tabline'></div>
-            </div>
-            <select className="statusofbook tabselect" onChange={(e)=>{
+                <select className="statusofbook tabselect" onChange={(e)=>{
                     const {name, value} = e.target;
                     setTab(parseInt(value));
-                    }}>
-                    <option value={0}>All</option>
-                    <option value={1}>Reading</option>
-                    <option value={2}>Finish Reading</option>
-                    <option value={3}>Plan To Read</option>
+                }}>
+                        <option value={0}>All</option>
+                        <option value={1}>Reading</option>
+                        <option value={2}>Finish Reading</option>
+                        <option value={3}>Plan To Read</option>
                 </select>
+            </div>
             <div className="yourbooks"><div className='books'>{books}</div></div>
         </div>
     )
