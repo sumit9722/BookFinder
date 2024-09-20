@@ -1,8 +1,6 @@
 import axios from 'axios';
 
 export default async function fetchingData(bookParametersObject) {
-    console.log(bookParametersObject);
-
     let titl="";
     let ser ="";
     let aut = "";

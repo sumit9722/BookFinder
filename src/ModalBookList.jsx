@@ -7,9 +7,11 @@ export default function ModalBookList(param){
     const [status, setStatus] = useState("0");
     function addtoyourbook(e){
         e.preventDefault();
+        e.target.innerHTML="<button disabled style='height: 40px;width: 80px;font-size: 1.25rem;color:rgb(230,230,230);border:none;border-radius: 80px;background-color:#505050';>Added</button>";
         if (((myBook.myBookList).filter((ele)=>ele.isbn===param.result.canonical_isbn)).length > 0)
         {
-            window.alert("You already have that in you list");
+            // window.alert("You already have that in you list");
+            e.target.innerHTML="<button disabled style='height: 40px;width: 160px;font-size: 1.25rem;color:rgb(230,230,230);border:none;border-radius: 80px;background-color:#505050';>Already Added</button>";
             return;
         }
         myBook.setMyBookList(b => [...b, {

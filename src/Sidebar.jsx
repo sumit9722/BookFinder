@@ -79,7 +79,6 @@ export default function Sidebar(){
     }
 
     useEffect(() => {
-        console.log("Updated filterparams:", filterparams);
     }, [filterparams]); 
     
    

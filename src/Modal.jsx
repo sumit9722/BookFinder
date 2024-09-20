@@ -58,7 +58,6 @@ export default function Modal() {
         };
         let result = await fetchingData(bookParametersObject);
         if(result.isFetchingsuccessfull){
-            console.log(result.bookArray)
             setApiResults(modalbooklistmaker(result.bookArray));
             if(result.bookArray.length == 0)
             {

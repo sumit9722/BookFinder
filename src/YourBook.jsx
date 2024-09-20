@@ -54,7 +54,6 @@ export default function YourBook(){
         }
         kitab = searchedBookList(kitab);
         kitab = filterdBookList(kitab);
-        console.log(kitab);
         let b;
         if(kitab.length > 0)
         {
@@ -67,7 +66,6 @@ export default function YourBook(){
             b = <div className="deftext">No Book in Your Collection Match the Criteria</div>
         }
 
-        console.log(b);
         return b;
 }
         
