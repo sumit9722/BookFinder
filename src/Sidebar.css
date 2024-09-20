@@ -1,7 +1,7 @@
 .sidebar{
     padding-top: 80px;
     margin: 0;
-    height: calc(100vh - 80px);
+    height: calc(100svh - 80px);
     background-color: var(--navdarkcolor);
     width: 300px;
 }
@@ -28,7 +28,7 @@
 
 
 .filteroption{
-    padding-top: 3vh;
+    padding-top: 3svh;
     font-size: 20px;
     font-weight: 500;
     display: flex;
@@ -66,7 +66,7 @@
     width: 90%;
     font-size: 15px;
     min-height: 20px;
-    max-height: 25vh;
+    max-height: 25svh;
     border-radius: 18px;
     background-color: var(--darkbgcolor);
     align-self: center;
@@ -152,7 +152,7 @@
         top: 0;
         left: 0;
         width: 100vw;
-        height: 100vh;
+        height: 100svh;
         z-index: -5;
         background-color: rgba(15, 15, 15,0.5);
     }
@@ -161,7 +161,7 @@
 @media (max-width: 400px){
     .sidebar{
         width: 100vw;
-        height: 100vh;
+        height: 100svh;
     }
     .sidebarvisible::before{
         display: none;

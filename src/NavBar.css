@@ -174,7 +174,7 @@ input[type="text" i] {
 
     .searchbefore{
         width: 100vw;
-        height: 100vh;
+        height: 100svh;
     }
 
     .searcher{

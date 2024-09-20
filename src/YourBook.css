@@ -5,7 +5,7 @@
     flex-direction: column;
     padding-top: 60px;
     width: 100%;
-    height: calc(100vh - 60px);
+    height: calc(100svh - 60px);
     z-index: 1;
 }
 
@@ -49,7 +49,7 @@
 
 .books{
     width: 100%;
-    height: calc(100vh - 200px);
+    height: calc(100svh - 200px);
     display: flex;
     justify-content: center;
     align-items: center;
